@@ -58,10 +58,6 @@ Live Demo : https://weather-app-basic-kohl.vercel.app/
    npm run dev
    ```
 
-## 📄 License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
 ---
 
 Built with ❤️ for a better weather experience.
