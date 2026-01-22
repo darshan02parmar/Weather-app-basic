@@ -1,0 +1,320 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --color-light: #e3e8e4;
+  --color-mid-light: #bcd3d4;
+  --color-mid: #9faac3;
+  --color-mid-dark: #817fa0;
+  --color-dark: #667865;
+
+  --glass-bg: rgba(227, 232, 228, 0.12);
+  --glass-border: rgba(255, 255, 255, 0.2);
+  --glass-blur: blur(25px);
+  --text-primary: #ffffff;
+  --text-secondary: rgba(255, 255, 255, 0.85);
+  --accent-blue: #bcd3d4;
+  --accent-yellow: #e3e8e4;
+  --shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  font-family: 'Outfit', sans-serif;
+  min-height: 100vh;
+  width: 100vw;
+  color: var(--text-primary);
+  background-image: url("https://images.unsplash.com/photo-1478760329108-5c3ed9d495a0?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  background-size: cover;
+}
+
+/* Dynamic Component Themes for Main Card ONLY */
+.card-main.clear {
+  background: radial-gradient(circle at top right, rgba(135, 206, 235, 0.8), rgba(70, 130, 180, 0.6));
+}
+
+.card-main.clouds {
+  background: radial-gradient(circle at top right, rgba(169, 169, 169, 0.8), rgba(105, 105, 105, 0.6));
+}
+
+.card-main.rain,
+.card-main.drizzle {
+  background: radial-gradient(circle at top right, rgba(112, 128, 144, 0.8), rgba(70, 130, 180, 0.6));
+}
+
+.card-main.snow {
+  background: radial-gradient(circle at top right, rgba(255, 255, 255, 0.9), rgba(211, 211, 211, 0.7));
+  color: #2d3748;
+}
+
+.card-main.snow label {
+  color: rgba(45, 55, 72, 0.8);
+}
+
+.card-main.thunderstorm {
+  background: radial-gradient(circle at top right, rgba(75, 0, 130, 0.8), rgba(25, 25, 112, 0.6));
+}
+
+.card-main.mist,
+.card-main.fog,
+.card-main.haze {
+  background: radial-gradient(circle at top right, rgba(192, 192, 192, 0.8), rgba(128, 128, 128, 0.6));
+}
+
+#root {
+  width: 100%;
+}
+
+.weather-app-container {
+  min-height: 100vh;
+  width: 100%;
+  padding: 3rem 1.5rem;
+  /* Slightly more padding */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Glassmorphism Classes */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--shadow);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.25);
+  transform: translateY(-4px);
+}
+
+/* SearchBox Styles */
+.SearchBox {
+  width: 100%;
+  max-width: 450px;
+  /* Reduced for better balance */
+  z-index: 50;
+}
+
+.search-input-container {
+  display: flex;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.glass-input {
+  flex: 1;
+}
+
+.glass-input .MuiOutlinedInput-root {
+  border-radius: 20px;
+  color: white;
+  background: rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+}
+
+.glass-input .MuiOutlinedInput-root.Mui-focused {
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 20px rgba(96, 165, 250, 0.3);
+}
+
+.glass-button {
+  border-radius: 20px !important;
+  text-transform: none !important;
+  font-weight: 700 !important;
+  padding: 0.75rem 1.5rem !important;
+}
+
+/* InfoBox Styles */
+.InfoBox {
+  width: 100%;
+  max-width: 450px;
+  /* Matched SearchBox */
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.card-main {
+  width: 100%;
+  padding: 2rem;
+  border-radius: 30px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.city-info h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 0.25rem;
+  letter-spacing: -0.02em;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.city-info .weather-type {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  text-transform: capitalize;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.temp-main {
+  font-size: 4.5rem;
+  font-weight: 800;
+  margin: 0.5rem 0;
+  line-height: 1;
+  background: linear-gradient(to bottom, #fff, #cbd5e1);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.1));
+}
+
+.temp-range {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.card-details {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  width: 100%;
+}
+
+.detail-item {
+  padding: 1.25rem;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.detail-item span {
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+
+.detail-item label {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+/* Forecast Box */
+.forecast-container {
+  width: 100%;
+  padding: 1.5rem;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.forecast-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  /* Fixed 5 columns for desktop */
+  gap: 0.75rem;
+}
+
+@media (max-width: 500px) {
+  .forecast-grid {
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  }
+}
+
+.forecast-item {
+  padding: 1rem 0.5rem;
+  border-radius: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.forecast-item .day {
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.forecast-item .temp {
+  font-size: 1.15rem;
+  font-weight: 800;
+}
+
+/* Animations */
+.fade-in {
+  animation: fadeIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Unit Toggle */
+.unit-toggle {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.unit-toggle:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.error-message {
+  background: rgba(239, 68, 68, 0.15);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  color: #fca5a5;
+  padding: 0.75rem 1.5rem;
+  border-radius: 15px;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+  text-align: center;
+  font-weight: 600;
+}

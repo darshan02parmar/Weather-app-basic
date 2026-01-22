@@ -1,0 +1,147 @@
+/* Glassmorphism Utility Classes */
+.glass-container {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 0.5px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 0.5px solid rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.glass-input {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  border: 0.5px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50px;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.glass-input:focus {
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.glass-button {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border: 0.5px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50px;
+  color: white;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.glass-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Dynamic Background Classes */
+.weather-bg-clear {
+  background: linear-gradient(135deg, #87CEEB 0%, #E0F6FF 100%);
+}
+
+.weather-bg-clouds {
+  background: linear-gradient(135deg, #B0C4DE 0%, #F5F5F5 100%);
+}
+
+.weather-bg-rain {
+  background: linear-gradient(135deg, #4682B4 0%, #2F4F4F 100%);
+}
+
+.weather-bg-snow {
+  background: linear-gradient(135deg, #F0F8FF 0%, #E6E6FA 100%);
+}
+
+.weather-bg-thunderstorm {
+  background: linear-gradient(135deg, #2F4F4F 0%, #191970 100%);
+}
+
+.weather-bg-drizzle {
+  background: linear-gradient(135deg, #778899 0%, #D3D3D3 100%);
+}
+
+.weather-bg-mist {
+  background: linear-gradient(135deg, #D3D3D3 0%, #F5F5F5 100%);
+}
+
+/* Animation Classes */
+.fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.slide-in-down {
+  animation: slideInDown 0.5s ease-out;
+}
+
+.scale-hover {
+  transition: transform 0.3s ease;
+}
+
+.scale-hover:hover {
+  transform: scale(1.02);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Loading Skeleton */
+.skeleton {
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 25%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0.1) 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+  border-radius: 8px;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .glass-container, .glass-card {
+    margin: 10px;
+    border-radius: 12px;
+  }
+
+  .glass-input, .glass-button {
+    font-size: 14px;
+    padding: 12px 20px;
+  }
+}

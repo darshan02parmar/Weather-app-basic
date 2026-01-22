@@ -1,0 +1,74 @@
+.InfoBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+  animation: slideIn 0.5s ease-out;
+}
+
+.cardContainer {
+  display: flex;
+  justify-content: center;
+  perspective: 1000px;
+}
+
+.cardContainer .MuiCard-root {
+  max-width: 400px;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  transform-style: preserve-3d;
+}
+
+.cardContainer .MuiCard-root:hover {
+  transform: translateY(-10px) rotateX(5deg);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+}
+
+.cardContainer .MuiCardMedia-root {
+  border-radius: 20px 20px 0 0;
+  height: 200px;
+}
+
+.cardContainer .MuiCardContent-root {
+  padding: 24px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
+  backdrop-filter: blur(10px);
+}
+
+.cardContainer .MuiTypography-h5 {
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cardContainer .MuiTypography-body2 {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.cardContainer .MuiTypography-body2 p {
+  margin: 8px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cardContainer .MuiTypography-body2 i {
+  font-weight: 500;
+  color: #555;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
