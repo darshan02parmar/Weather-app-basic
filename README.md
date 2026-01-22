@@ -2,8 +2,9 @@
 
 A beautiful, sleek, and responsive weather application built with React, Vite, and Framer Motion. Features a premium glassmorphic UI with dynamic themes based on weather conditions.
 
-Demo : https://weather-app-basic-kohl.vercel.app/
+Live Demo : https://weather-app-basic-kohl.vercel.app/
 <br>
+
 ![React](https://img.shields.io/badge/React-20232A?style=flat&logo=react&logoColor=61DAFB)
 ![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat&logo=vite&logoColor=white)
 
