@@ -43,10 +43,13 @@ async function processResponses(weatherRes, forecastRes) {
         temp: weatherData.main.temp,
         tempMin: weatherData.main.temp_min,
         tempMax: weatherData.main.temp_max,
+        feelsLike: weatherData.main.feels_like,
         humidity: weatherData.main.humidity,
         pressure: weatherData.main.pressure,
         windSpeed: weatherData.wind.speed,
         visibility: weatherData.visibility,
+        sunrise: weatherData.sys.sunrise,
+        sunset: weatherData.sys.sunset,
         weatherType: weatherData.weather[0].main,
         forecast: dailyForecast
     };

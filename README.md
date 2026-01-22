@@ -8,11 +8,13 @@ A beautiful, sleek, and responsive weather application built with React, Vite, a
 
 ## 🌟 Features
 
-- 📍 **Geolocation Support**: Automatically detects your city to provide local weather on startup.
+- 📍 **Geolocation & Persistence**: Automatically detects your city and remembers it for your next visit using LocalStorage.
 - 🔍 **Global Search**: Search for weather information in any city worldwide.
 - 📅 **5-Day Forecast**: Get a glimpse of the week ahead with detailed daily predictions.
 - 🌡️ **Unit Conversion**: Seamlessly switch between Celsius and Fahrenheit.
-- 💎 **Glassmorphic Design**: A modern, premium aesthetic with smooth animations powered by Framer Motion.
+- 🌅 **Astronomy Details**: Real-time Sunrise and Sunset times for any location.
+- 💎 **Glassmorphic Design**: A modern, premium aesthetic with a custom-themed scrollbar.
+- ✨ **Skeleton Loading**: Professional loading states with MUI Skeletons for a smooth experience.
 - ☁️ **Dynamic Imagery**: Components adapt their appearance based on the current weather type.
 
 ## 🛠️ Tech Stack
